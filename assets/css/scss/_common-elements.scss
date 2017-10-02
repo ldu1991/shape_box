@@ -1,0 +1,78 @@
+/*
+ * FORMS
+ */
+form {
+    position: relative;
+    @include clearfix;
+}
+
+.wpcf7-not-valid-tip {
+    display: none !important;
+}
+
+.wpcf7-not-valid {
+    border: 1px solid #CC0000 !important;
+}
+
+.wpcf7-validation-errors {
+    @include font-rem(400, 13, 15);
+    margin: 0 15px !important;
+    padding: 5px !important;
+    color: #fff;
+    border: 0 solid transparent !important;
+    background-color: #FF0000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-width: 300px;
+    @include border-radius(3px);
+    @include translateY(125%);
+    z-index: 1000;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        right: 15px;
+    	width: 0;
+    	height: 0;
+    	border-left: 5px solid transparent;
+    	border-right: 5px solid transparent;
+    	border-bottom: 10px solid #FF0000;
+    }
+
+}
+
+.wpcf7-mail-sent-ok {
+    @include font-rem(400, 13, 15);
+    margin: 0 15px !important;
+    padding: 5px !important;
+    color: #fff;
+    border: 0 solid transparent !important;
+    background-color: #33CC33;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-width: 300px;
+    @include border-radius(3px);
+    @include translateY(125%);
+    z-index: 1000;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        right: 15px;
+    	width: 0;
+    	height: 0;
+    	border-left: 5px solid transparent;
+    	border-right: 5px solid transparent;
+    	border-bottom: 10px solid #33CC33;
+    }
+}
+
+.ajax-loader {
+    position: absolute;
+    top: 0;
+    right: 0;
+}

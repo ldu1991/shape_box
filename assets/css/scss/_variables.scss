@@ -1,0 +1,41 @@
+//
+// Grid containers v3
+//
+$container-max-widths: (
+  sm: 540px,
+  md: 750px,
+  lg: 970px,
+  xl: 1200px
+);
+
+//
+// General colors
+//
+$body-bg: #FFF;
+$body-color: #000;
+$a-color: #000;
+$a-color-hover: #000;
+
+$color-h3: #272727;
+$color-text: #9f9f9f;
+
+$bg-button: #2775ff;
+
+//
+// Font face
+//
+$thin: 100;
+$extra-light: 200;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+$extra-bold: 800;
+$ultra-bold: 900;
+
+//
+// Basic font
+//
+$base-font-family: 'Open Sans';
+$secondary-font-family: 'Montserrat';

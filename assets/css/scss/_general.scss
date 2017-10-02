@@ -1,0 +1,148 @@
+* {
+    @include placeholder();
+}
+
+body {
+	background-color: $body-bg;
+	color: $body-color;
+	font-size: 100%;
+    font-family: $base-font-family, Arial, sans-serif;
+}
+a {
+	text-decoration: none;
+	color: $a-color;
+
+    &:hover {
+        text-decoration: underline;
+        color: $a-color-hover;
+    }
+
+}
+
+// wrapper
+.wrapper {
+    padding: 300px 0 0;
+}
+
+.shape-box {
+
+    &__item {
+        position: relative;
+        background-color: #FFF;
+        box-shadow: 0 6px 30px rgba(0,0,0,.12);
+
+        &:hover {
+
+            .visible-overlay {
+                height: 100%;
+            }
+
+            .visible-content {
+
+                height: calc(100% - 20px);
+
+                &:before {
+                    visibility: hidden;
+                    opacity: 0;
+                }
+
+            }
+
+        }
+
+    }
+
+    &__bg {
+        width: 100%;
+        height: auto;
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 0;
+    	background-image: -webkit-linear-gradient(bottom, rgba(39,117,255,.94), rgba(0,198,255,.94));
+    	background-image: -moz-linear-gradient(bottom, rgba(39,117,255,.94), rgba(0,198,255,.94));
+    	background-image: -o-linear-gradient(bottom, rgba(39,117,255,.94), rgba(0,198,255,.94));
+    	background-image: -ms-linear-gradient(bottom, rgba(39,117,255,.94), rgba(0,198,255,.94));
+    	background-image: linear-gradient(to top, rgba(39,117,255,.94), rgba(0,198,255,.94));
+        transition: height 0.3s linear;
+    }
+
+    // content
+    &__content {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        text-align: center;
+        background-color: #FFF;
+        height: 75px;
+        overflow: hidden;
+
+        &--title {
+            @include font-em($bold, 24, 24);
+            font-family: $secondary-font-family;
+            text-transform: uppercase;
+            color: $color-h3;
+            position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: -50px;
+                transform: translateX(-50%);
+                width: 68px;
+                height: 68px;
+                background: url(../images/option.png);
+            }
+
+        }
+
+        &--text {
+            @include font-em(400, 14, 21);
+            color: $color-text;
+            padding: 40px;
+        }
+
+        &--read-more {
+            @include font-em($bold, 16, 24);
+            text-transform: uppercase;
+            color: #fff;
+        	width: 200px;
+        	height: 54px;
+        	border-radius: 27px;
+        	background-color: $bg-button;
+            border: 0;
+        	box-shadow: 0 5px 16px rgba(39,117,255,.5);
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: none;
+            }
+
+        }
+
+    }
+
+    &__overlay {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transform: translateY(100%);
+        width: 100%;
+        height: 125px;
+        background: url(../images/rectangle.png) no-repeat center bottom;
+        transition: all 0.3s linear;
+    }
+
+
+}
+
+.transition-all {
+    transition: all 0.3s ease-in-out;
+}
