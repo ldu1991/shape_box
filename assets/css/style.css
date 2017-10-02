@@ -1160,47 +1160,81 @@ a {
     color: #000; }
 
 .wrapper {
-  padding: 300px 0 0; }
+  padding: 100px 0 0; }
 
 .shape-box__item {
   position: relative;
   background-color: #FFF;
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.12); }
-  .shape-box__item:hover .visible-overlay {
+  .shape-box__item:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0;
+    transition: all 0.7s linear;
+    background-image: -webkit-linear-gradient(bottom, rgba(39, 117, 255, 0.94), rgba(0, 198, 255, 0.94));
+    background-image: -moz-linear-gradient(bottom, rgba(39, 117, 255, 0.94), rgba(0, 198, 255, 0.94));
+    background-image: -o-linear-gradient(bottom, rgba(39, 117, 255, 0.94), rgba(0, 198, 255, 0.94));
+    background-image: -ms-linear-gradient(bottom, rgba(39, 117, 255, 0.94), rgba(0, 198, 255, 0.94));
+    background-image: linear-gradient(to top, rgba(39, 117, 255, 0.94), rgba(0, 198, 255, 0.94));
+    z-index: 1; }
+  .shape-box__item:hover:before {
     height: 100%; }
-  .shape-box__item:hover .visible-content {
-    height: calc(100% - 20px); }
-    .shape-box__item:hover .visible-content:before {
-      visibility: hidden;
-      opacity: 0; }
+  .shape-box__item:hover .b-wrapper_visible {
+    height: 100%; }
+    .shape-box__item:hover .b-wrapper_visible:after {
+      transform: skewY(0); }
+  .shape-box__item:hover .b-wrapper__data_vertical-center {
+    transform: translate(-50%, -50%); }
 
 .shape-box__bg {
   width: 100%;
   height: auto; }
 
-.shape-box__overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 0;
-  background-image: -webkit-linear-gradient(bottom, rgba(39, 117, 255, 0.94), rgba(0, 198, 255, 0.94));
-  background-image: -moz-linear-gradient(bottom, rgba(39, 117, 255, 0.94), rgba(0, 198, 255, 0.94));
-  background-image: -o-linear-gradient(bottom, rgba(39, 117, 255, 0.94), rgba(0, 198, 255, 0.94));
-  background-image: -ms-linear-gradient(bottom, rgba(39, 117, 255, 0.94), rgba(0, 198, 255, 0.94));
-  background-image: linear-gradient(to top, rgba(39, 117, 255, 0.94), rgba(0, 198, 255, 0.94));
-  transition: height 0.3s linear; }
-
-.shape-box__content {
+.shape-box__wrap {
   position: absolute;
   top: 10px;
   right: 10px;
+  bottom: 10px;
   left: 10px;
-  text-align: center;
-  background-color: #FFF;
-  height: 75px;
-  overflow: hidden; }
-  .shape-box__content--title {
+  overflow: hidden;
+  z-index: 2; }
+
+.b-wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 76px;
+  background-color: #FFF; }
+  .b-wrapper:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 125px;
+    left: 0;
+    bottom: 0;
+    transform-origin: right bottom;
+    transform: skewY(-25deg);
+    transition: all 0.7s linear;
+    background-color: #FFF;
+    z-index: 1; }
+  .b-wrapper__content {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    height: 100%; }
+  .b-wrapper__data {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -35%); }
+  .b-wrapper__icon {
+    margin-bottom: 30px; }
+  .b-wrapper__title {
     font-weight: 700;
     line-height: 24px;
     font-size: 24px;
@@ -1209,23 +1243,14 @@ a {
     text-transform: uppercase;
     color: #272727;
     position: relative; }
-    .shape-box__content--title:before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: -50px;
-      transform: translateX(-50%);
-      width: 68px;
-      height: 68px;
-      background: url(../images/option.png); }
-  .shape-box__content--text {
+  .b-wrapper__text {
     font-weight: 400;
     line-height: 21px;
     font-size: 14px;
     font-size: 0.875em;
     color: #9f9f9f;
-    padding: 40px; }
-  .shape-box__content--read-more {
+    padding: 30px; }
+  .b-wrapper__read-more {
     font-weight: 700;
     line-height: 24px;
     font-size: 16px;
@@ -1235,25 +1260,17 @@ a {
     width: 200px;
     height: 54px;
     border-radius: 27px;
-    background-color: #2775ff;
     border: 0;
     box-shadow: 0 5px 16px rgba(39, 117, 255, 0.5);
     transition: all 0.3s ease-in-out;
     cursor: pointer; }
-    .shape-box__content--read-more:hover {
+    .b-wrapper__read-more:hover {
       box-shadow: none; }
 
-.shape-box__overlay {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  transform: translateY(100%);
-  width: 100%;
-  height: 125px;
-  background: url(../images/rectangle.png) no-repeat center bottom;
-  transition: all 0.3s linear; }
+.read-more-blue {
+  background-color: #2775ff; }
 
 .transition-all {
-  transition: all 0.3s ease-in-out; }
+  transition: all 0.7s linear; }
 
 /*# sourceMappingURL=style.css.map */
